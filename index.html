@@ -2,15 +2,26 @@
 <html>
  <head>
    <script>
-        var urls = ['google.com', 'facebook.com', 'facebook.com'];
-        var url = 'https://' + urls[Math.floor(Math.random() * urls.length)];
-        window.location.href = url;
+    var links = [
+    "bbc.com",
+    "google.com",
+    "youtube.com",
+    "facebook.com"];
+        openStuff = function () {
+           // get a random number between 0 and the number of links
+           var randIdx = Math.random() * links.length;
+           // round it, so it can be used as array index
+           randIdx = parseInt(randIdx, 10);
+    // construct the link to be opened
+    var link = 'http://' + links[randIdx];
+    // open it in a new window / tab (depends on browser setting)
+    window.open(link);
+};
     </script>
   </head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+ <button onclick="openStuff();">Click here to begin!</button>
 
 </body>
 </html>
